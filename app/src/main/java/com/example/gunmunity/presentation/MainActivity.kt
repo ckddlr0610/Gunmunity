@@ -1,5 +1,6 @@
-package com.example.gunmunity
+package com.example.gunmunity.presentation
 
+import android.content.Context
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -7,8 +8,19 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.gunmunity.R
+import org.jetbrains.anko.intentFor
+import org.jetbrains.anko.singleTop
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        fun start (context : Context) {
+            context.startActivity(
+                context.intentFor<MainActivity>().singleTop()
+            )
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(setOf(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications))
+            R.id.navigation_community,
+            R.id.navigation_calculator,
+            R.id.navigation_notifications
+        ))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }

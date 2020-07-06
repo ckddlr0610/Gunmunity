@@ -1,5 +1,6 @@
-package com.example.gunmunity.login_signup
+package com.example.gunmunity.presentation.login_signup
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.gunmunity.usecase.LoginUsecase
 import com.example.gunmunity.util.SingleLiveEvent
@@ -7,9 +8,8 @@ import com.example.gunmunity.util.sha256
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class LoginViewModel(
-    private val loginUsecase: LoginUsecase
-) : ViewModel() {
+public class LoginViewModel() : ViewModel() {
+    private val loginUsecase: LoginUsecase = LoginUsecase()
     val loginSuccess : SingleLiveEvent<Void> = SingleLiveEvent()
 
     fun doLogin(email : String, password : String) {
@@ -20,7 +20,7 @@ class LoginViewModel(
             .subscribe({
                 loginSuccess.call()
             }, {
-
+                Log.d("Login", it.localizedMessage)
             })
     }
 }

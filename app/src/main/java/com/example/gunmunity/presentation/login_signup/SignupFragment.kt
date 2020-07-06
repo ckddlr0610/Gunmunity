@@ -1,4 +1,4 @@
-package com.example.gunmunity.login_signup
+package com.example.gunmunity.presentation.login_signup
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,10 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.example.gunmunity.GunmunityApplication
 import com.example.gunmunity.R
 import com.example.gunmunity.databinding.FragmentSignupBinding
+import com.example.gunmunity.presentation.MainActivity
 
 class SignupFragment : Fragment() {
 
@@ -41,13 +43,16 @@ class SignupFragment : Fragment() {
 
     private fun setLiveDataObserver() {
         signupViewModel.signupSuccess.observe(viewLifecycleOwner, Observer {
-
+            MainActivity.start(GunmunityApplication.appContext!!)
         })
     }
 
     private fun setDataBinding(inflater: LayoutInflater, container: ViewGroup?) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_signup, container, false)
         binding.viewModel = signupViewModel
-        binding.viewModel = signupViewModel
+    }
+
+    public fun startMainActivity() {
+
     }
 }

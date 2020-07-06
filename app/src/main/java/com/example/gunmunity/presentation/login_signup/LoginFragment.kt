@@ -1,4 +1,4 @@
-package com.example.gunmunity.login_signup
+package com.example.gunmunity.presentation.login_signup
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,8 +9,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
+import com.example.gunmunity.GunmunityApplication
 import com.example.gunmunity.R
 import com.example.gunmunity.databinding.FragmentLoginBinding
+import com.example.gunmunity.presentation.MainActivity
 
 class LoginFragment : Fragment() {
 
@@ -22,8 +24,6 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        loginViewModel =
-            ViewModelProviders.of(this).get(LoginViewModel::class.java)
 
         setDataBinding(inflater, container)
         setLiveDataObserver()
@@ -41,7 +41,7 @@ class LoginFragment : Fragment() {
 
     private fun setLiveDataObserver() {
         loginViewModel.loginSuccess.observe(viewLifecycleOwner, Observer {
-
+            MainActivity.start(GunmunityApplication.appContext!!)
         })
     }
 
@@ -50,6 +50,8 @@ class LoginFragment : Fragment() {
         container: ViewGroup?
     ) {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        loginViewModel =
+            ViewModelProviders.of(this).get(LoginViewModel::class.java)
         binding.viewModel = loginViewModel
         binding.loginQuestionSignup.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)

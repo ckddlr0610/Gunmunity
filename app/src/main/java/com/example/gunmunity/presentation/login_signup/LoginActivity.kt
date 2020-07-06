@@ -1,9 +1,8 @@
-package com.example.gunmunity.login_signup
+package com.example.gunmunity.presentation.login_signup
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.gunmunity.R
 
 class LoginActivity : AppCompatActivity() {

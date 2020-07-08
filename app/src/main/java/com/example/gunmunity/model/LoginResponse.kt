@@ -4,7 +4,7 @@ import com.example.gunmunity.model.entity.AccessToken
 import com.example.gunmunity.model.entity.UserInfo
 
 data class LoginResponse (
-    private val accessToken : AccessToken,
-    private val refreshToken : String,
-    private val userInfo : UserInfo
+    val accessToken : AccessToken,
+    val refreshToken : String,
+    val userInfo : UserInfo
 )

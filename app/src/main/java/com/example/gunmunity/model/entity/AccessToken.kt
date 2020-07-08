@@ -1,6 +1,6 @@
 package com.example.gunmunity.model.entity
 
 data class AccessToken (
-    private val expire : Long,
-    private val token : String
+    val expire : Long,
+    val token : String
 )

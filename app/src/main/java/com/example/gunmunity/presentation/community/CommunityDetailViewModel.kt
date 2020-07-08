@@ -1,4 +1,6 @@
 package com.example.gunmunity.presentation.community
 
-class CommunityDetailViewModel {
+import androidx.lifecycle.ViewModel
+
+class CommunityDetailViewModel: ViewModel() {
 }

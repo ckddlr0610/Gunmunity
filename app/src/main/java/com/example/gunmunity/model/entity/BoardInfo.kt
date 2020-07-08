@@ -9,5 +9,6 @@ data class BoardInfo (
     val createdDate: String,
     val id: Long,
     val modifiedDate: String,
+    val recommendCount: Int,
     val title: String
 ) : Serializable

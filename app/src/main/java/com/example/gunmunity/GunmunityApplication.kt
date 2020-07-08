@@ -2,6 +2,7 @@ package com.example.gunmunity
 
 import android.app.Application
 import android.content.Context
+import com.example.gunmunity.util.SharedPreferenceManager
 
 class GunmunityApplication : Application() {
     companion object {
@@ -14,5 +15,6 @@ class GunmunityApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         appContext = applicationContext
+        SharedPreferenceManager.init(appContext!!)
     }
 }

@@ -13,13 +13,11 @@
 
     <fragment
         android:id="@+id/navigation_calculator"
-        android:name="com.example.gunmunity.presentation.calculator.CalculatorFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_calculator" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
         android:name="com.example.gunmunity.presentation.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_ranking"
+        android:name="com.example.gunmunity.presentation.ranking.RankingFragment"
+        android:label="RankingFragment" />
 </navigation>

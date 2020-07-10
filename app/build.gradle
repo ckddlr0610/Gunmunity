@@ -72,4 +72,6 @@ dependencies {
 
     // Android Anko
     implementation 'org.jetbrains.anko:anko:0.10.8'
+
+    implementation 'org.conscrypt:conscrypt-android:2.2.1'
 }

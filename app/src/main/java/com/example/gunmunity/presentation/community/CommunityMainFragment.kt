@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gunmunity.R
 import com.example.gunmunity.databinding.FragmentCommunityMainBinding
 import com.example.gunmunity.model.entity.BoardInfo
+import com.example.gunmunity.util.RetrofitManager
 import kotlinx.android.synthetic.main.fragment_community_main.*
 
 class CommunityMainFragment : Fragment() {

@@ -1,5 +1,7 @@
 package com.example.gunmunity.util
 
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
@@ -16,17 +18,30 @@ object RetrofitManager {
     private const val TAG: String = "RetrofitManager"
 
     private const val BASE_URL = "http://ec2-13-125-6-45.ap-northeast-2.compute.amazonaws.com/"
+    private const val BASE_URL_PUBLIC = "http://openapi.mnd.go.kr/"
     private const val CONNECT_TIMEOUT = 15L
     private const val WRITE_TIMEOUT = 15L
     private const val READ_TIMEOUT = 15L
+    private val gson : Gson = GsonBuilder().setLenient().create()
 
     fun <T> create(service: Class<T>): T =
         getRetrofit().create(service)
 
+    fun <T> createFromPublic(service: Class<T>): T =
+        getRetrofitFromPublic().create(service)
+
     fun getRetrofit() : Retrofit =
         Retrofit.Builder()
             .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .client(getOkHttpClient())
+            .build()
+
+    fun getRetrofitFromPublic() : Retrofit =
+        Retrofit.Builder()
+            .baseUrl(BASE_URL_PUBLIC)
+            .addConverterFactory(GsonConverterFactory.create(gson))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(getOkHttpClient())
             .build()

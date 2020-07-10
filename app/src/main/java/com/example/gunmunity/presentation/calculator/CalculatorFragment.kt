@@ -22,10 +22,6 @@ class CalculatorFragment : Fragment() {
         calculatorViewModel =
                 ViewModelProviders.of(this).get(CalculatorViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_calculator, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        calculatorViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 }

@@ -3,23 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@id/navigation_board_list">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.gunmunity.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
-
-    <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.gunmunity.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
-
-    <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.gunmunity.ui.notifications.NotificationsFragment"
+        android:id="@+id/navigation_calculator"
+        android:name="com.example.gunmunity.presentation.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_ranking"
+        android:name="com.example.gunmunity.presentation.ranking.RankingFragment"
+        android:label="RankingFragment" />
+    <fragment
+        android:id="@+id/navigation_board_list"
+        android:name="com.example.gunmunity.presentation.community.CommunityListFragment"
+        android:label="CommunityListFragment" />
 </navigation>

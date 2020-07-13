@@ -23,6 +23,10 @@ android {
         }
     }
 
+    dataBinding {
+        enabled = true
+    }
+
 // To inline the bytecode built with JVM target 1.8 into
 // bytecode that is being built with JVM target 1.6. (e.g. navArgs)
 
@@ -52,4 +56,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // RxJava, RxAndroid, RxKotlin
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.4.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    // Android Anko
+    implementation 'org.jetbrains.anko:anko:0.10.8'
+
+    implementation 'org.conscrypt:conscrypt-android:2.2.1'
 }

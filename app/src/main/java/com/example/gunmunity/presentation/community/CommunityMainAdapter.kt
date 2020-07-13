@@ -8,7 +8,7 @@ import com.example.gunmunity.databinding.ItemCommunityBinding
 import com.example.gunmunity.model.entity.BoardInfo
 import java.util.*
 
-class CommunityMainAdapter(var mFragment: CommunityMainFragment) :
+class CommunityMainAdapter(var mActivity: CommunityMainActivity) :
     RecyclerView.Adapter<CommunityMainAdapter.ViewHolder>() {
     private var lists: ArrayList<BoardInfo>? = ArrayList<BoardInfo>()
 
@@ -40,7 +40,7 @@ class CommunityMainAdapter(var mFragment: CommunityMainFragment) :
             val tokenedStr = tokenCreatedDate(boardInfo.createdDate)
             binding.itemTime.text = tokenedStr[0] + "\n" + tokenedStr[1]
             binding.root
-                .setOnClickListener(View.OnClickListener { mFragment.startDetailActivity(boardInfo) })
+                .setOnClickListener(View.OnClickListener { mActivity.startDetailActivity(boardInfo) })
         }
 
         private fun tokenCreatedDate(time: String): ArrayList<String> {

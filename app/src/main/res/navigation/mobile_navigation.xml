@@ -3,13 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_community">
-
-    <fragment
-        android:id="@+id/navigation_community"
-        android:name="com.example.gunmunity.presentation.community.CommunityMainFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_community_main" />
+    app:startDestination="@id/navigation_board_list">
 
     <fragment
         android:id="@+id/navigation_calculator"
@@ -20,4 +14,8 @@
         android:id="@+id/navigation_ranking"
         android:name="com.example.gunmunity.presentation.ranking.RankingFragment"
         android:label="RankingFragment" />
+    <fragment
+        android:id="@+id/navigation_board_list"
+        android:name="com.example.gunmunity.presentation.community.CommunityListFragment"
+        android:label="CommunityListFragment" />
 </navigation>

@@ -18,16 +18,26 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="com.example.gunmunity.presentation.login_signup.LoginActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentation.MainActivity" />
-        <activity android:name=".presentation.community.CommunityPostActivity" />
-        <activity android:name=".presentation.community.CommunityDetailActivity" />
+        <activity
+            android:name=".presentation.MainActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".presentation.community.CommunityPostActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".presentation.community.CommunityDetailActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".presentation.community.CommunityMainActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

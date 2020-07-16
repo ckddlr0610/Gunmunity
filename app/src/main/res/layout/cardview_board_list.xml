@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.gunmunity.presentation.community.CommunityListViewModel" />
+            type="com.gunmunity.gunmunity.presentation.community.CommunityListViewModel" />
     </data>
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"

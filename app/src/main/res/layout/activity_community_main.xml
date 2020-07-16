@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.gunmunity.presentation.community.CommunityMainViewModel" />
+            type="com.gunmunity.gunmunity.presentation.community.CommunityMainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"

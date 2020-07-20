@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.gunmunity.gunmunity.R
 import com.gunmunity.gunmunity.databinding.FragmentBoardListBinding
-import com.gunmunity.gunmunity.model.CardDTO
+import com.gunmunity.gunmunity.model.CardList
 
 class CommunityListFragment : Fragment() {
     private lateinit var binding : FragmentBoardListBinding
@@ -31,11 +31,11 @@ class CommunityListFragment : Fragment() {
     }
 
     private fun initRecyclerView() {
-        val boardList = ArrayList<CardDTO>(listOf(
-            CardDTO(resources.getDrawable(R.drawable.image_army), "육군 게시판"),
-            CardDTO(resources.getDrawable(R.drawable.image_navy), "해군 게시판"),
-            CardDTO(resources.getDrawable(R.drawable.image_air), "공군 게시판"),
-            CardDTO(resources.getDrawable(R.drawable.image_marine), "해병 게시판")))
+        val boardList = ArrayList<CardList>(listOf(
+            CardList(resources.getDrawable(R.drawable.image_army), "육군 게시판"),
+            CardList(resources.getDrawable(R.drawable.image_navy), "해군 게시판"),
+            CardList(resources.getDrawable(R.drawable.image_air), "공군 게시판"),
+            CardList(resources.getDrawable(R.drawable.image_marine), "해병 게시판")))
 
         val linearLayoutManager = LinearLayoutManager(activity)
         linearLayoutManager.orientation = RecyclerView.VERTICAL

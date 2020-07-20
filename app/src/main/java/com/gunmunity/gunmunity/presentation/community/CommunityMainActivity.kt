@@ -25,7 +25,7 @@ class CommunityMainActivity : AppCompatActivity() {
         setDataBinding()
         initRecyclerView()
         clickButton()
-        communityMainViewModel.getBoardList("FREE", 0)
+        communityMainViewModel.getBoardList("COUNSEL", 0)
         setLiveDataObserver()
 
         binding.mainCreate.setOnClickListener {

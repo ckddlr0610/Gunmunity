@@ -42,7 +42,8 @@ class LoginFragment : Fragment() {
 
     private fun setLiveDataObserver() {
         loginViewModel.loginSuccess.observe(viewLifecycleOwner, Observer {
-            MainActivity.start(GunmunityApplication.appContext!!)
+            val mActivity : LoginActivity = activity as LoginActivity
+            mActivity.startMainActivity()
             activity?.finish()
         })
         loginViewModel.loginFailed.observe(viewLifecycleOwner, Observer {

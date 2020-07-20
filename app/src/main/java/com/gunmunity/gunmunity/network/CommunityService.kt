@@ -15,4 +15,12 @@ interface CommunityService {
 
     @GET("/v1/boards/popular")
     fun getPopularList(@Query("currentPage") currentPage: Int) : Single<SearchBoardsResponse>
+
+    @POST("/v1/boards/{boardId}/recommendation")
+    fun recommendBoard(@Header("accessToken") accessToken : String,
+                    @Path("boardId") boardId : Long) : Single<BoardRecommendationResponse>
+
+    @HTTP(method="DELETE", hasBody=true, path="/v1/boards/{boardId}/recommendation")
+    fun recommendBoardCancel(@Header("accessToken") accessToken : String,
+                       @Path("boardId") boardId : Long) : Single<BoardRecommendationResponse>
 }

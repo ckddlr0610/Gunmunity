@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.gunmunity.presentation.community.CommunityPostViewModel" />
+            type="com.gunmunity.gunmunity.presentation.community.CommunityPostViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -4,7 +4,7 @@
     app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.gunmunity.presentation.login_signup.LoginFragment"
+        android:name="com.gunmunity.gunmunity.presentation.login_signup.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_signupFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/signupFragment"
-        android:name="com.example.gunmunity.presentation.login_signup.SignupFragment"
+        android:name="com.gunmunity.gunmunity.presentation.login_signup.SignupFragment"
         android:label="SignupFragment" />
 </navigation>

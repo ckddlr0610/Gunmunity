@@ -7,15 +7,15 @@
 
     <fragment
         android:id="@+id/navigation_calculator"
-        android:name="com.example.gunmunity.presentation.notifications.NotificationsFragment"
+        android:name="com.gunmunity.gunmunity.presentation.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/navigation_ranking"
-        android:name="com.example.gunmunity.presentation.ranking.RankingFragment"
+        android:name="com.gunmunity.gunmunity.presentation.ranking.RankingFragment"
         android:label="RankingFragment" />
     <fragment
         android:id="@+id/navigation_board_list"
-        android:name="com.example.gunmunity.presentation.community.CommunityListFragment"
+        android:name="com.gunmunity.gunmunity.presentation.community.CommunityListFragment"
         android:label="CommunityListFragment" />
 </navigation>

@@ -3,7 +3,7 @@
     <data>
         <variable
             name="boardInfo"
-            type="com.example.gunmunity.model.entity.BoardInfo" />
+            type="com.gunmunity.gunmunity.model.entity.BoardInfo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

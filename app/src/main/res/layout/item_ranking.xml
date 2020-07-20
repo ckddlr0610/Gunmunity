@@ -6,7 +6,7 @@
 
         <variable
             name="data"
-            type="com.example.gunmunity.model.entity.RankingInfo" />
+            type="com.gunmunity.gunmunity.model.entity.RankingInfo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -6,10 +6,10 @@
 
         <variable
             name="viewModel"
-            type="com.example.gunmunity.presentation.community.CommunityDetailViewModel" />
+            type="com.gunmunity.gunmunity.presentation.community.CommunityDetailViewModel" />
         <variable
             name="data"
-            type="com.example.gunmunity.model.entity.BoardInfo" />
+            type="com.gunmunity.gunmunity.model.entity.BoardInfo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

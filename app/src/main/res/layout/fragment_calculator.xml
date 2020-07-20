@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.gunmunity.presentation.calculator.CalculatorViewModel" />
+            type="com.gunmunity.gunmunity.presentation.calculator.CalculatorViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

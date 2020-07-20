@@ -13,6 +13,8 @@ import io.reactivex.schedulers.Schedulers
 class LoginViewModel : ViewModel() {
     private val loginUsecase: LoginUsecase = LoginUsecase()
     val loginSuccess : SingleLiveEvent<Void> = SingleLiveEvent()
+    val loginFailed : SingleLiveEvent<Void> = SingleLiveEvent()
+    val loginPasswordFailed : SingleLiveEvent<Void> = SingleLiveEvent()
 
     fun doLogin(email : String, password : String) {
         val hashedPassword = password.sha256()
@@ -20,11 +22,21 @@ class LoginViewModel : ViewModel() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                Log.d("Login","Login Success")
                 SharedPreferenceManager.setPref(ConstValue.CONST_ACCESS_TOKEN, it.accessToken.token)
                 SharedPreferenceManager.setPref(ConstValue.CONST_USER_ID, it.userInfo.id)
                 loginSuccess.call()
             }, {
-                Log.d("Login", it.localizedMessage)
+                if (it.localizedMessage.contains("403")) {
+                    loginFailed.call()
+                    Log.d("LoginFailed", it.localizedMessage)
+                } else if (it.localizedMessage.contains("401")) {
+                    loginPasswordFailed.call()
+                    Log.d("LoginFailed", it.localizedMessage)
+                } else {
+                    Log.d("LoginFailed", it.localizedMessage)
+                }
+
             })
     }
 }

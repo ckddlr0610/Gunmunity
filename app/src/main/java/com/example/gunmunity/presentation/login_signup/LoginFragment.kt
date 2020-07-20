@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -42,6 +43,13 @@ class LoginFragment : Fragment() {
     private fun setLiveDataObserver() {
         loginViewModel.loginSuccess.observe(viewLifecycleOwner, Observer {
             MainActivity.start(GunmunityApplication.appContext!!)
+            activity?.finish()
+        })
+        loginViewModel.loginFailed.observe(viewLifecycleOwner, Observer {
+            Toast.makeText(activity, "일치하는 계정이 없습니다", Toast.LENGTH_LONG).show()
+        })
+        loginViewModel.loginPasswordFailed.observe(viewLifecycleOwner, Observer {
+            Toast.makeText(activity, "비밀번호가 맞지 않습니다", Toast.LENGTH_LONG).show()
         })
     }
 
